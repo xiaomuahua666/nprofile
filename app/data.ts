@@ -9,16 +9,8 @@ export const SOCIAL_LINKS: SocialLink[] = [
     link: 'https://t.me/xiaomuahua666',
   },
   {
-    label: 'Instagram',
-    link: 'https://www.instagram.com/xiaomuahua666',
-  },
-  {
-    label: 'Twitter',
-    link: 'https://x.com/xiaomuahua666',
-  },
-  {
-    label: 'Facebook',
-    link: 'https://facebook.com/xiaomuahua666',
+    label: 'QQ',
+    link: 'https://qm.qq.com/q/rYuSJRkM5W',
   },
 ]
 
