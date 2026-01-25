@@ -90,7 +90,7 @@ export default function Personal() {
       >
         <h3 className="mb-5 text-lg font-medium">与我连结</h3>
         <p className="mb-5 text-zinc-600 dark:text-zinc-400">
-          联系方式：{' '}
+          邮箱：{' '}
           <a className="underline dark:text-zinc-300" href={`mailto:${EMAIL}`}>
             {EMAIL}
           </a>
