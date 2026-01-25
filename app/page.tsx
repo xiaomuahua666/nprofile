@@ -71,7 +71,7 @@ export default function Personal() {
         <div className="flex gap-8 items-start">
           <div className="flex-1">
             <p className="text-zinc-600 dark:text-zinc-400">
-              一名学生，喜欢打舞萌，偶尔玩玩 MC，经常幻想 AI 可以帮助解决 99% 的问题。MBTI 忘记了，愿意结识新朋友，欢迎与我交流。对了，请保持礼貌 {'>.<'}
+              一名学生，喜欢打舞萌，偶尔玩玩 MC，经常幻想 AI 可以帮助解决 99% 的问题。MBTI 忘记了，愿意结识新朋友，欢迎与我交流。对了，请保持礼貌，我很友善 {'>.<'}
             </p>
           </div>
           <div className="shrink-0">
