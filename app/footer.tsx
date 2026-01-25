@@ -66,14 +66,73 @@ function ThemeSwitch() {
   )
 }
 
+function SiteUptimeSpan() {
+  const [uptime, setUptime] = useState('')
+
+  useEffect(() => {
+    const calculateUptime = () => {
+      const launchDate = new Date('2026-01-25').getTime()
+      // 转换为北京时间 (UTC+8)
+      const now = Date.now() + (new Date().getTimezoneOffset() + 480) * 60 * 1000
+      const diff = now - launchDate
+
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24))
+      const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
+      const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60))
+      const seconds = Math.floor((diff % (1000 * 60)) / 1000)
+
+      setUptime(`${days}天${hours}小时${minutes}分${String(seconds).padStart(2, '0')}秒`)
+    }
+
+    calculateUptime()
+    const interval = setInterval(calculateUptime, 1000)
+
+    return () => clearInterval(interval)
+  }, [])
+
+  return <span>本站运行: {uptime}</span>
+}
+
+function SiteUptime() {
+  const [uptime, setUptime] = useState('')
+
+  useEffect(() => {
+    const calculateUptime = () => {
+      // 网站上线时间 (改成你的上线日期)
+      const launchDate = new Date('2026-01-25').getTime()
+      // 转换为北京时间 (UTC+8)
+      const now = Date.now() + (new Date().getTimezoneOffset() + 480) * 60 * 1000
+      const diff = now - launchDate
+
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24))
+      const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
+      const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60))
+      const seconds = Math.floor((diff % (1000 * 60)) / 1000)
+
+      setUptime(`${days}天${hours}小时${minutes}分${String(seconds).padStart(2, '0')}秒`)
+    }
+
+    calculateUptime()
+    const interval = setInterval(calculateUptime, 1000)
+
+    return () => clearInterval(interval)
+  }, [])
+
+  return (
+    <span className="text-zinc-500 dark:text-zinc-400">
+      本站运行: {uptime}
+    </span>
+  )
+}
+
 export function Footer() {
   return (
     <footer className="mt-24 border-t border-zinc-100 px-0 py-4 dark:border-zinc-800">
       <div className="flex items-center justify-between">
-        <a href="https://github.com/ibelick/nim" target="_blank">
+        <a href="https://github.com/xiaomuahua666/nprofile" target="_blank">
           <TextLoop className="text-xs text-zinc-500">
-            <span>© 2024 Nim.</span>
-            <span>Built with Motion-Primitives.</span>
+            <span>© {new Date().getFullYear()} Mahua</span>
+            <SiteUptimeSpan />
           </TextLoop>
         </a>
         <div className="text-xs text-zinc-400">

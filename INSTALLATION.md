@@ -1,81 +1,96 @@
-# Nim - Installation Guide
+# 安装和使用指南
 
-## Prerequisites
+## 系统要求
 
-- Node.js 20.x or later
-- Git
+- Node.js 18 或更高版本
+- npm 或 yarn 包管理器
 
-## Installation Steps
+## 安装步骤
 
-1. **Clone the repository**
+### 1. 克隆项目
 
-   ```bash
-   git clone https://github.com/ibelick/nim.git
-   cd nim
-   ```
-
-2. **Install dependencies**
-
-   ```bash
-   npm install
-   ```
-
-3. **Run the development server**
-
-   ```bash
-   npm run dev
-   ```
-
-4. **Update the template data**
-
-   Update the template data in the `app/data.ts` file.
-
-   ```ts
-   export const EMAIL = 'your@email.com'
-
-   export const SOCIAL_LINKS = [
-     {
-       label: 'Github',
-       link: 'your-github-url',
-     },
-     // Add your social links
-   ]
-
-   ...
-   ```
-
-5. **Add your blog posts**
-
-Create a new .mdx file for each blog post inside the app/blog folder. For example:
-app/blog/your-article-slug/page.mdx.
-
-Example blog post structure in .mdx:
-
-```mdx
-# Your Article Title
-
-Introduction
-
-Your content here...
-
-## Code Examples
-
-// Example code block here...
+```bash
+git clone https://github.com/xiaomuahua666/nprofile.git
+cd nprofile
 ```
 
-**Note:** You can use all MDX features, including React components, in your blog posts.
+### 2. 安装依赖
 
-6. **Project Structure**
+```bash
+npm install
+```
 
-For a better understanding of the Next.js project structure, refer to the [Next.js](https://nextjs.org/docs/app/getting-started/project-structure) documentation.
+### 3. 启动开发服务器
 
-7. **Additional Features**
+```bash
+npm run dev
+```
 
-Want to add more animated components?
-Check out [Motion-Primitives](https://motion-primitives.com/) for additional animation components and templates. If you want something else DM on [X](https://x.com/Ibelick).
+访问 [http://localhost:3000](http://localhost:3000) 查看你的网站。
 
-8.  **Deployment**
+## 自定义网站
 
-You can deploy your site to any hosting platform that supports Next.js. For the easiest deployment experience, consider using Vercel:
+### 编辑个人信息
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fibelick%2Fnim&env=NEXT_PUBLIC_SITE_URL&project-name=nim&repository-name=nim&redirect-url=https%3A%2F%2Ftwitter.com%2Fibelick&demo-title=Nim&demo-description=Nim%20is%20a%20free%20and%20open-source%20minimal%20personal%20website%20template%20built%20with%20Next.js%2015%2C%20React%2019%2C%20and%20Motion-Primitives.&demo-url=https%3A%2F%2Fnim.vercel.app&demo-image=https%3A%2F%2Fraw.githubusercontent.com%2Fibelick%2Fnim%2Frefs%2Fheads%2Fmain%2F.github%2Fassets%2Freadme.png&teamSlug=ibelick)
+编辑 `app/page.tsx` 中的自我介绍部分
+
+### 更换头像
+
+1. 准备一张头像图片（建议 400x400px 或更大）
+2. 保存为 `public/avatar.jpg`
+
+### 修改联系信息
+
+编辑 `app/data.ts`：
+
+```typescript
+export const EMAIL = 'your@email.com'
+
+export const SOCIAL_LINKS: SocialLink[] = [
+  {
+    label: 'Github',
+    link: 'https://github.com/your-username',
+  },
+  // 更多社交链接...
+]
+```
+
+### 更改网页标题和描述
+
+编辑 `app/layout.tsx`
+
+### 修改网站上线时间
+
+编辑 `app/footer.tsx` 中的 `launchDate`
+
+### 修改主题色
+
+编辑 `app/layout.tsx` 中的 `viewport`
+
+## 构建和部署
+
+### 构建生产版本
+
+```bash
+npm run build
+```
+
+### 本地运行生产版本
+
+```bash
+npm run start
+```
+
+### 部署到 Vercel
+
+1. 推送代码到 GitHub
+2. 访问 [Vercel](https://vercel.com)
+3. 导入你的 GitHub 仓库
+4. Vercel 会自动部署和构建
+
+## 常见问题
+
+如遇到问题，请检查：
+- [Next.js 文档](https://nextjs.org/docs)
+- 项目的 GitHub Issues
+- 发邮件联系: xiaomuahua666@gmail.com

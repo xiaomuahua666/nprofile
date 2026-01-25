@@ -1,40 +1,52 @@
-<img src="/public/cover.jpg" alt="Cover image representing Nim, a personal website template" width="100%" />
+# 麻花的个人网站
 
-Nim is a free and open-source personal website template built with Next.js 15, React 19, Tailwind CSS v4, and Motion. Designed for developers, designers, and founders, it combines minimalism with delightful animated components powered by [Motion-Primitives](https://motion-primitives.com).
+欢迎来到麻花的个人主页！这是一个简洁而优雅的个人网站，展示我的学习过程和兴趣爱好。
 
-Live demo: [https://nim-fawn.vercel.app](https://nim-fawn.vercel.app)
+## 特性
 
-## Features
+- ✨ 现代化设计，暗黑/浅色主题切换
+- 🎨 流畅的动画效果
+- 📱 完全响应式设计
+- 🔗 社交媒体链接整合
+- ⏱️ 网站运行时间实时显示
 
-- Minimal one-page portfolio layout.
-- Blog support with MDX.
-- Responsive and accessible design.
-- Easy to use
-- [Motion-Primitives](https://motion-primitives.com) for animated components.
+## 关于我
 
-## Getting Started
+我是一名在校学生，热衷于探索技术与设计的交汇点。我喜欢创造简洁且功能强大的数字体验，并不断学习新技术以提升自己的技能。
 
-For detailed setup instructions, refer to the [Installation Guide](./INSTALLATION.md).
+## 快速开始
 
 ```bash
-git clone https://github.com/ibelick/nim.git
-cd nim
+# 克隆项目
+git clone https://github.com/xiaomuahua666/nprofile.git
+cd nprofile
+
+# 安装依赖
 npm install
+
+# 启动开发服务器
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+在浏览器中打开 [https://mahua.uk](https://mahua.uk) 查看效果。
 
-## Contributing
+## 自定义配置
 
-Contributions are welcome! Feel free to open issues or submit pull requests to improve Nim.
+详见 [安装和使用指南](./INSTALLATION.md)
 
-## Deployment
+## 技术栈
 
-You can deploy your site to any hosting platform that supports Next.js. For the easiest deployment experience, consider using Vercel:
+- **框架**: Next.js 15
+- **UI 库**: React 19
+- **样式**: Tailwind CSS v4
+- **动画**: Motion Primitives
+- **图标**: Lucide React
+- **主题**: next-themes
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fibelick%2Fnim&env=NEXT_PUBLIC_SITE_URL&project-name=nim&repository-name=nim&redirect-url=https%3A%2F%2Ftwitter.com%2Fibelick&demo-title=Nim&demo-description=Nim%20is%20a%20free%20and%20open-source%20minimal%20personal%20website%20template%20built%20with%20Next.js%2015%2C%20React%2019%2C%20and%20Motion-Primitives.&demo-url=https%3A%2F%2Fnim.vercel.app&demo-image=https%3A%2F%2Fraw.githubusercontent.com%2Fibelick%2Fnim%2Frefs%2Fheads%2Fmain%2F.github%2Fassets%2Freadme.png&teamSlug=ibelick)
+## 联系方式
 
-## About
-
-Nim is designed to make personal branding effortless and beautiful. If you enjoy it, consider sharing it and exploring [Motion-Primitives Pro](https://pro.motion-primitives.com/).
+- 📧 邮箱: xiaomuahua666@gmail.com
+- 🐙 GitHub: [@xiaomuahua666](https://github.com/xiaomuahua666)
+- 🐦 Twitter: [@xiaomuahua666](https://x.com/xiaomuahua666)
+- 📱 Telegram: [@xiaomuahua666](https://t.me/xiaomuahua666)
+- 📸 Instagram: [@xiaomuahua666](https://www.instagram.com/xiaomuahua666)
