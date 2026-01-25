@@ -13,10 +13,6 @@ export const SOCIAL_LINKS: SocialLink[] = [
     link: 'https://www.instagram.com/xiaomuahua666',
   },
   {
-    label: 'Github',
-    link: 'https://github.com/xiaomuahua666',
-  },
-  {
     label: 'Twitter',
     link: 'https://x.com/xiaomuahua666',
   },
