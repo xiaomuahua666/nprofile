@@ -54,4 +54,4 @@ export const PROJECTS: Project[] = [
   },
 ]
 
-export const EMAIL = 'xiaomuahua666@gmail.com'
+export const EMAIL = 'mahua@dmhpro.top'
