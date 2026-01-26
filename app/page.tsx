@@ -1,7 +1,8 @@
 'use client'
+import React from 'react'
 import { motion } from 'motion/react'
 import { Magnetic } from '@/components/ui/magnetic'
-import { EMAIL, SOCIAL_LINKS } from './data'
+import { EMAIL, SOCIAL_LINKS, PROJECTS } from './data'
 
 const VARIANTS_CONTAINER = {
   hidden: { opacity: 0 },
@@ -29,11 +30,19 @@ function MagneticSocialLink({
   children: React.ReactNode
   link: string
 }) {
+  const [isMobile, setIsMobile] = React.useState(false)
+
+  React.useEffect(() => {
+    setIsMobile(window.matchMedia('(max-width: 768px)').matches)
+  }, [])
+
+  const MagneticWrapper = isMobile ? React.Fragment : Magnetic
+
   return (
-    <Magnetic springOptions={{ bounce: 0 }} intensity={0.3}>
+    <MagneticWrapper springOptions={isMobile ? undefined : { bounce: 0 }} intensity={isMobile ? undefined : 0.3}>
       <a
         href={link}
-        className="group relative inline-flex shrink-0 items-center gap-[1px] rounded-full bg-zinc-100 px-2.5 py-1 text-sm text-black transition-colors duration-200 hover:bg-zinc-950 hover:text-zinc-50 dark:bg-zinc-800 dark:text-zinc-100 dark:hover:bg-zinc-700"
+        className="group relative inline-flex shrink-0 items-center gap-[1px] rounded-full bg-zinc-100 px-2 md:px-2.5 py-1 text-xs md:text-sm text-black transition-colors duration-200 hover:bg-zinc-950 hover:text-zinc-50 active:bg-zinc-950 active:text-zinc-50 dark:bg-zinc-800 dark:text-zinc-100 dark:hover:bg-zinc-700 dark:active:bg-zinc-700"
       >
         {children}
         <svg
@@ -52,14 +61,14 @@ function MagneticSocialLink({
           ></path>
         </svg>
       </a>
-    </Magnetic>
+    </MagneticWrapper>
   )
 }
 
 export default function Personal() {
   return (
     <motion.main
-      className="space-y-24"
+      className="space-y-16 md:space-y-24"
       variants={VARIANTS_CONTAINER}
       initial="hidden"
       animate="visible"
@@ -68,9 +77,9 @@ export default function Personal() {
         variants={VARIANTS_SECTION}
         transition={TRANSITION_SECTION}
       >
-        <div className="flex gap-8 items-start">
+        <div className="flex flex-col-reverse gap-4 md:flex-row md:gap-8 md:items-start">
           <div className="flex-1">
-            <p className="text-zinc-600 dark:text-zinc-400">
+            <p className="text-sm md:text-base text-zinc-600 dark:text-zinc-400 leading-relaxed">
               一名学生，喜欢打舞萌，偶尔玩玩 MC，经常幻想 AI 可以帮助解决 99% 的问题。MBTI 忘记了，愿意结识新朋友，欢迎与我交流。对了，请保持礼貌，我很友善 {'>.<'}
             </p>
           </div>
@@ -78,7 +87,7 @@ export default function Personal() {
             <img
               src="/avatar.jpg"
               alt="Profile Avatar"
-              className="w-32 h-32 rounded-xl object-cover ring-1 ring-zinc-200 dark:ring-zinc-800"
+              className="w-24 h-24 md:w-32 md:h-32 rounded-xl object-cover ring-1 ring-zinc-200 dark:ring-zinc-800"
             />
           </div>
         </div>
@@ -88,17 +97,31 @@ export default function Personal() {
         variants={VARIANTS_SECTION}
         transition={TRANSITION_SECTION}
       >
-        <h3 className="mb-5 text-lg font-medium">与我连结</h3>
-        <p className="mb-5 text-zinc-600 dark:text-zinc-400">
+        <h3 className="mb-4 md:mb-5 text-base md:text-lg font-medium">我的项目</h3>
+        <div className="flex flex-wrap gap-2 md:gap-3 max-w-4xl">
+          {PROJECTS.map((project) => (
+            <MagneticSocialLink key={project.name} link={project.link}>
+              <span className="font-medium text-sm md:text-base">{project.name}</span>
+            </MagneticSocialLink>
+          ))}
+        </div>
+      </motion.section>
+
+      <motion.section
+        variants={VARIANTS_SECTION}
+        transition={TRANSITION_SECTION}
+      >
+        <h3 className="mb-4 md:mb-5 text-base md:text-lg font-medium">与我连结</h3>
+        <p className="mb-4 md:mb-5 text-sm md:text-base text-zinc-600 dark:text-zinc-400 break-all">
           邮箱：{' '}
-          <a className="underline dark:text-zinc-300" href={`mailto:${EMAIL}`}>
+          <a className="underline dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-zinc-100" href={`mailto:${EMAIL}`}>
             {EMAIL}
           </a>
         </p>
-        <div className="flex items-center justify-start space-x-3">
+        <div className="flex flex-wrap items-center justify-start gap-2 md:gap-3">
           {SOCIAL_LINKS.map((link) => (
             <MagneticSocialLink key={link.label} link={link.link}>
-              {link.label}
+              <span className="text-xs md:text-sm">{link.label}</span>
             </MagneticSocialLink>
           ))}
         </div>
