@@ -11,11 +11,7 @@ type Project = {
 export const SOCIAL_LINKS: SocialLink[] = [
   {
     label: 'Telegram',
-    link: 'https://t.me/xiaomuahua666',
-  },
-  {
-    label: 'QQ',
-    link: 'https://qm.qq.com/q/rYuSJRkM5W',
+    link: 'https://t.me/nyahua?direct',
   },
 ]
 
@@ -45,7 +41,7 @@ export const PROJECTS: Project[] = [
     link: 'https://fireworks.dmhpro.top/',
   },
   {
-    name: '祝贺六一',
+    name: '六一',
     link: 'https://liuyi.dmhpro.top/',
   },
   {
