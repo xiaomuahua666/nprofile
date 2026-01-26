@@ -97,7 +97,7 @@ export default function Personal() {
         variants={VARIANTS_SECTION}
         transition={TRANSITION_SECTION}
       >
-        <h3 className="mb-4 md:mb-5 text-base md:text-lg font-medium">我的项目</h3>
+        <h3 className="mb-4 md:mb-5 text-base md:text-lg font-medium">小玩意…?</h3>
         <div className="flex flex-wrap gap-2 md:gap-3 max-w-4xl">
           {PROJECTS.map((project) => (
             <MagneticSocialLink key={project.name} link={project.link}>
