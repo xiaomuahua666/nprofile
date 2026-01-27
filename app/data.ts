@@ -29,6 +29,10 @@ export const PROJECTS: Project[] = [
     link: 'https://jump.dmhpro.top/',
   },
   {
+    name: '扫雷',
+    link: 'https://minesweeper.dmhpro.top/',
+  },
+  {
     name: '2fa 验证',
     link: 'https://2fa.dmhpro.top/',
   },
