@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     default: "Mahua's home - 主页",
     template: '%s | Mahua'
   },
-  description:  '麻花的自述页面，或许还夹带了点…小玩意?',
+  description:  '麻花的自述页面，或许…还夹带了点小玩意？',
 };
 
 const geist = Geist({
