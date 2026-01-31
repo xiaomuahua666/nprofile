@@ -18,10 +18,10 @@ export const metadata: Metadata = {
     canonical: '/'
   },
   title: {
-    default: "Mahua's home - 麻花主页",
+    default: "Mahua's home - 主页",
     template: '%s | Mahua'
   },
-  description:  '麻花的自述页面',
+  description:  '麻花的自述页面，或许还夹带了点…小玩意(?',
 };
 
 const geist = Geist({
