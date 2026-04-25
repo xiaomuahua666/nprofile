@@ -54,7 +54,7 @@ export const PROJECTS: Project[] = [
   },
   {
     name: '短链接',
-    link: 'https://她.top',
+    link: 'https://dmhpro.top',
   },
   {
     name: '高中电子教材',
