@@ -57,8 +57,8 @@ export const PROJECTS: Project[] = [
     link: 'https://她.top',
   },
   {
-    name: '高中电子教材'
-    link: 'pan.mahua.uk/s/dJHo'
+    name: '高中电子教材',
+    link: 'pan.mahua.uk/s/dJHo',
   },
 ]
 
