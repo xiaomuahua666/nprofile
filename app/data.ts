@@ -76,6 +76,10 @@ export const PROJECTS: Project[] = [
     name: 'MuteApp',
     link: 'https://github.com/xiaomuahua666/MuteApp',
   },
+  {
+    name: 'MyCloudApp',
+    link: 'https://github.com/xiaomuahua666/myowncloudapp',
+  },
 ]
 
 export const EMAIL = 'mahua@dmhpro.top'
