@@ -45,8 +45,8 @@ export default function RootLayout({
       <body
         className={`${geist.variable} ${geistMono.variable} bg-white tracking-tight antialiased dark:bg-zinc-950`}
       >
-        {/* 不蒜子访问统计 */}
-        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" />
+        {/* 不蒜子访问统计 - 使用 jsDelivr CDN */}
+        <script async src="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" />
         <ThemeProvider
           enableSystem={true}
           attribute="class"

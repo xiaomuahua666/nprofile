@@ -66,40 +66,11 @@ function ThemeSwitch() {
   )
 }
 
-// 访问计数器组件
+// 访问计数器组件 - 让不蒜子自己填充数字
 function VisitorCounter() {
-  const [count, setCount] = useState<string>('...')
-
-  useEffect(() => {
-    let interval: NodeJS.Timeout | null = null
-
-    const checkCount = () => {
-      const el = document.getElementById('busuanzi_value_page_pv')
-      if (el && el.innerText && el.innerText !== '...') {
-        setCount(el.innerText)
-        if (interval) clearInterval(interval)
-      }
-    }
-
-    interval = setInterval(checkCount, 500)
-
-    // 10秒后如果还没加载成功，停止轮询并显示暂无数据
-    const timeout = setTimeout(() => {
-      if (interval) {
-        clearInterval(interval)
-        setCount('?')
-      }
-    }, 10000)
-
-    return () => {
-      if (interval) clearInterval(interval)
-      clearTimeout(timeout)
-    }
-  }, [])
-
   return (
     <span className="text-zinc-500 text-xs">
-      访问量: {count} 次
+      访问量: <span id="busuanzi_value_page_pv">...</span> 次
     </span>
   )
 }
