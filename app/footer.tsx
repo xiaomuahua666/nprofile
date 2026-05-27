@@ -66,36 +66,13 @@ function ThemeSwitch() {
   )
 }
 
-// 访问量显示组件（用于轮播）
-function VisitorCountDisplay() {
-  const [count, setCount] = useState<string>('...')
-
-  useEffect(() => {
-    // 等待不蒜子填充数据
-    let interval: NodeJS.Timeout | null = null
-    let attempts = 0
-
-    const checkCount = () => {
-      const el = document.getElementById('busuanzi_value_page_pv')
-      if (el && el.innerText && el.innerText !== '...' && el.innerText !== '0') {
-        setCount(el.innerText)
-        if (interval) clearInterval(interval)
-      }
-      attempts++
-      if (attempts > 20) {
-        // 10秒后还没拿到数据，显示暂无
-        setCount('?')
-        if (interval) clearInterval(interval)
-      }
-    }
-
-    interval = setInterval(checkCount, 500)
-    return () => {
-      if (interval) clearInterval(interval)
-    }
-  }, [])
-
-  return <span>访问量: {count} 次</span>
+// 隐藏的不蒜子容器，用于让脚本填充数据
+function BusuanziContainer() {
+  return (
+    <div style={{ display: 'none' }}>
+      <span id="busuanzi_value_page_pv"></span>
+    </div>
+  )
 }
 
 function SiteUptimeSpan() {
@@ -125,14 +102,42 @@ function SiteUptimeSpan() {
 }
 
 export function Footer() {
+  // 监听不蒜子填充的数据
+  const [visitorCount, setVisitorCount] = useState('...')
+
+  useEffect(() => {
+    let interval: NodeJS.Timeout | null = null
+    let attempts = 0
+
+    const checkCount = () => {
+      const el = document.getElementById('busuanzi_value_page_pv')
+      if (el && el.innerText && el.innerText !== '' && el.innerText !== '...') {
+        setVisitorCount(el.innerText)
+        if (interval) clearInterval(interval)
+      }
+      attempts++
+      if (attempts > 20) {
+        setVisitorCount('?')
+        if (interval) clearInterval(interval)
+      }
+    }
+
+    interval = setInterval(checkCount, 500)
+    return () => {
+      if (interval) clearInterval(interval)
+    }
+  }, [])
+
   return (
     <footer className="mt-16 md:mt-24 border-t border-zinc-100 px-0 py-4 dark:border-zinc-800">
+      {/* 隐藏的不蒜子容器 */}
+      <BusuanziContainer />
       <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
         <a href="https://github.com/xiaomuahua666/nprofile" target="_blank" rel="noopener noreferrer">
-          <TextLoop className="text-xs text-zinc-500">
+          <TextLoop className="text-xs text-zinc-500" interval={3}>
             <span>© {new Date().getFullYear()} Mahua</span>
             <SiteUptimeSpan />
-            <VisitorCountDisplay />
+            <span>访问量: {visitorCount} 次</span>
           </TextLoop>
         </a>
         <div className="text-xs text-zinc-400">
