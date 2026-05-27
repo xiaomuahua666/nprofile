@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     default: "Mahua's home - 主页",
     template: '%s | Mahua'
   },
-  description:  '麻花的自述页面，或许…还夹带了点小玩意？',
+  description: '麻花的自述页面，或许…还夹带了点小玩意？',
 };
 
 const geist = Geist({
@@ -45,6 +45,8 @@ export default function RootLayout({
       <body
         className={`${geist.variable} ${geistMono.variable} bg-white tracking-tight antialiased dark:bg-zinc-950`}
       >
+        {/* 不蒜子访问统计 */}
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" />
         <ThemeProvider
           enableSystem={true}
           attribute="class"
