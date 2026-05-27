@@ -66,13 +66,36 @@ function ThemeSwitch() {
   )
 }
 
-// 访问计数器组件 - 让不蒜子自己填充数字
-function VisitorCounter() {
-  return (
-    <span className="text-zinc-500 text-xs">
-      访问量: <span id="busuanzi_value_page_pv">...</span> 次
-    </span>
-  )
+// 访问量显示组件（用于轮播）
+function VisitorCountDisplay() {
+  const [count, setCount] = useState<string>('...')
+
+  useEffect(() => {
+    // 等待不蒜子填充数据
+    let interval: NodeJS.Timeout | null = null
+    let attempts = 0
+
+    const checkCount = () => {
+      const el = document.getElementById('busuanzi_value_page_pv')
+      if (el && el.innerText && el.innerText !== '...' && el.innerText !== '0') {
+        setCount(el.innerText)
+        if (interval) clearInterval(interval)
+      }
+      attempts++
+      if (attempts > 20) {
+        // 10秒后还没拿到数据，显示暂无
+        setCount('?')
+        if (interval) clearInterval(interval)
+      }
+    }
+
+    interval = setInterval(checkCount, 500)
+    return () => {
+      if (interval) clearInterval(interval)
+    }
+  }, [])
+
+  return <span>访问量: {count} 次</span>
 }
 
 function SiteUptimeSpan() {
@@ -105,15 +128,13 @@ export function Footer() {
   return (
     <footer className="mt-16 md:mt-24 border-t border-zinc-100 px-0 py-4 dark:border-zinc-800">
       <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
-        <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
-          <a href="https://github.com/xiaomuahua666/nprofile" target="_blank" rel="noopener noreferrer">
-            <TextLoop className="text-xs text-zinc-500">
-              <span>© {new Date().getFullYear()} Mahua</span>
-              <SiteUptimeSpan />
-            </TextLoop>
-          </a>
-          <VisitorCounter />
-        </div>
+        <a href="https://github.com/xiaomuahua666/nprofile" target="_blank" rel="noopener noreferrer">
+          <TextLoop className="text-xs text-zinc-500">
+            <span>© {new Date().getFullYear()} Mahua</span>
+            <SiteUptimeSpan />
+            <VisitorCountDisplay />
+          </TextLoop>
+        </a>
         <div className="text-xs text-zinc-400">
           <ThemeSwitch />
         </div>
