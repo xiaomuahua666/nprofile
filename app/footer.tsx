@@ -98,7 +98,12 @@ function SiteUptimeSpan() {
     return () => clearInterval(interval)
   }, [])
 
-  return <span>本站运行: {uptime}</span>
+  // 使用等宽数字 + 固定最小宽度，防止数字宽度变化导致文字位移
+  return (
+    <span className="tabular-nums inline-block min-w-[180px]">
+      本站运行: {uptime}
+    </span>
+  )
 }
 
 export function Footer() {
