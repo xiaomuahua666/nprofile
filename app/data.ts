@@ -80,6 +80,10 @@ export const PROJECTS: Project[] = [
     name: 'MyCloudApp',
     link: 'https://github.com/xiaomuahua666/myowncloudapp',
   },
+  {
+    name: 'TelegramDMM',
+    link: 'https://github.com/xiaomuahua666/TelegramDirectmessageManager/tree/main?tab=readme-ov-file',
+  },
 ]
 
 export const EMAIL = 'mahua@dmhpro.top'
