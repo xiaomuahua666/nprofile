@@ -33,7 +33,7 @@ export const PROJECTS: Project[] = [
     link: 'https://jump.dmhpro.top/',
   },
   {
-    name: '扫雷',
+    name: 'Minesweeper',
     link: 'https://minesweeper.dmhpro.top/',
   },
   {
