@@ -34,7 +34,7 @@ export const PROJECTS: Project[] = [
   },
   {
     name: 'Minesweeper',
-    link: 'https://minesweeper.dmhpro.top/',
+    link: 'https://minesweeper.mahua.uk/',
   },
   {
     name: '2fa 验证',
