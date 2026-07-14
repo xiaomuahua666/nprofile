@@ -138,13 +138,16 @@ export function Footer() {
       {/* 隐藏的不蒜子容器 */}
       <BusuanziContainer />
       <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
-        <a href="https://github.com/xiaomuahua666/nprofile" target="_blank" rel="noopener noreferrer">
-          <TextLoop className="text-xs text-zinc-500" interval={3}>
-            <span>© {new Date().getFullYear()} Mahua</span>
-            <SiteUptimeSpan />
-            <span>访问量: {visitorCount} 次</span>
-          </TextLoop>
-        </a>
+        <TextLoop
+          className="text-xs text-zinc-500"
+          interval={3}
+          clickToAdvance
+          autoResumeDelay={5000}
+        >
+          <span>© {new Date().getFullYear()} Mahua</span>
+          <SiteUptimeSpan />
+          <span>访问量: {visitorCount} 次</span>
+        </TextLoop>
         <div className="text-xs text-zinc-400">
           <ThemeSwitch />
         </div>
