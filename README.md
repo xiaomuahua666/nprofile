@@ -32,7 +32,9 @@ npm run dev
 
 ## 自定义配置
 
-详见 [安装和使用指南](./INSTALLATION.md)
+- 个人信息与项目 / 社交链接：编辑 `app/data.ts`
+- 站点 URL：`lib/constants.ts`
+- SEO 元数据：`app/layout.tsx`
 
 ## 技术栈
 
