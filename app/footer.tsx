@@ -80,9 +80,10 @@ function SiteUptimeSpan() {
 
   useEffect(() => {
     const calculateUptime = () => {
-      const launchDate = new Date('2026-01-25').getTime()
-      const now = Date.now() + (new Date().getTimezoneOffset() + 480) * 60 * 1000
-      const diff = now - launchDate
+      // 上线时刻是绝对时间点（保持原基准：2026-01-25 UTC 午夜）；
+      // 运行时长 = 两个绝对时刻之差，与访客时区无关，无需时区修正
+      const launchDate = new Date('2026-01-25T00:00:00Z').getTime()
+      const diff = Date.now() - launchDate
 
       const days = Math.floor(diff / (1000 * 60 * 60 * 24))
       const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))

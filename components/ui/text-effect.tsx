@@ -177,7 +177,9 @@ const createVariantsWithTransition = (
 ): Variants => {
   if (!transition) return baseVariants
 
-  const { exit: _, ...mainTransition } = transition
+  // 从 transition 中剔除 exit，仅保留主过渡配置
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const { exit: _exit, ...mainTransition } = transition
 
   return {
     ...baseVariants,

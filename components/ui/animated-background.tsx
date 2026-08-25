@@ -10,10 +10,15 @@ import {
   useId,
 } from 'react'
 
+type AnimatedBackgroundItemProps = React.HTMLAttributes<HTMLElement> & {
+  'data-id': string
+  'data-checked'?: string
+}
+
 export type AnimatedBackgroundProps = {
   children:
-    | ReactElement<{ 'data-id': string }>[]
-    | ReactElement<{ 'data-id': string }>
+    | ReactElement<AnimatedBackgroundItemProps>[]
+    | ReactElement<AnimatedBackgroundItemProps>
   defaultValue?: string
   onValueChange?: (newActiveId: string | null) => void
   className?: string
@@ -46,7 +51,7 @@ export function AnimatedBackground({
     }
   }, [defaultValue])
 
-  return Children.map(children, (child: any, index) => {
+  return Children.map(children, (child: ReactElement<AnimatedBackgroundItemProps>, index) => {
     const id = child.props['data-id']
 
     const interactionProps = enableHover
