@@ -22,7 +22,7 @@ export const SOCIAL_LINKS: SocialLink[] = [
 export const PROJECTS: Project[] = [
   {
     name: '2048',
-    link: 'https://2048.dmhpro.top/',
+    link: 'https://2048.mahua.uk/',
   },
   {
     name: '贪吃蛇',
