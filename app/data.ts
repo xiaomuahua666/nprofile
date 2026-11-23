@@ -86,4 +86,4 @@ export const PROJECTS: Project[] = [
   },
 ]
 
-export const EMAIL = 'mahua@dmhpro.top'
+export const EMAIL = 'mahua@mahua.uk'
