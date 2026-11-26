@@ -14,14 +14,14 @@ export default function LinksPage() {
       <section>
         <h1 className="mb-4 text-lg md:text-xl font-medium">友情链接</h1>
         <p className="text-sm md:text-base text-zinc-600 dark:text-zinc-400 leading-relaxed">
-          这里是一些我常去的地方。想交换友链的话，欢迎通过{' '}
+          这里是一些我常去的地方。欢迎通过{' '}
           <a
             className="underline hover:text-zinc-900 dark:hover:text-zinc-100"
             href="mailto:mahua@mahua.uk"
           >
             邮箱
           </a>{' '}
-          联系我，附上站点名称、网址、描述和头像链接。
+          联系我。咱们交换友链！
         </p>
       </section>
 

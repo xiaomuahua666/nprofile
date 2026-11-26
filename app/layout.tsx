@@ -6,6 +6,7 @@ import { Footer } from './footer'
 import { ThemeProvider } from 'next-themes'
 import { Analytics } from '@vercel/analytics/next'
 import { SpeedInsights } from '@vercel/speed-insights/next'
+import { VersionWatcher } from '@/components/version-watcher'
 
 export const viewport: Viewport = {
   width: 'device-width',
@@ -63,6 +64,7 @@ export default function RootLayout({
         </ThemeProvider>
         <Analytics />
         <SpeedInsights />
+        <VersionWatcher />
       </body>
     </html>
   )
