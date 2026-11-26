@@ -78,7 +78,7 @@ descr: 一名学生，喜欢打舞萌，偶尔玩玩 MC`}
           href="/"
           className="text-zinc-500 underline hover:text-zinc-900 dark:hover:text-zinc-100"
         >
-          ← 回到主页
+          回到主页
         </Link>
       </p>
     </main>
