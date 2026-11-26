@@ -19,6 +19,12 @@ export function Header() {
           学生
         </TextEffect>
       </div>
+      <Link
+        href="/links"
+        className="text-xs md:text-sm text-zinc-500 transition-colors hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100"
+      >
+        友链
+      </Link>
     </header>
   )
 }

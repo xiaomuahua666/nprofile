@@ -87,3 +87,21 @@ export const PROJECTS: Project[] = [
 ]
 
 export const EMAIL = 'mahua@mahua.uk'
+
+type FriendLink = {
+  name: string
+  link: string
+  avatar: string
+  description: string
+}
+
+// 在此添加友链，每项形如：
+// { name: '站点名', link: 'https://example.com', avatar: 'https://example.com/avatar.png', description: '一句话简介' }
+export const FRIEND_LINKS: FriendLink[] = [
+  {
+    name: 'Vincy云昔',
+    link: 'https://blog.vincy1230.net/',
+    avatar: 'https://a.vincy1230.net/blogroll/avatar.jpg',
+    description: '太阳出来了 雾就会散的',
+  },
+]
